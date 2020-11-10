@@ -1,10 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap');
+
+:root{
+    --font: 'Nunito', sans-serif; 
+}
+
+* {
+    box-sizing: border-box;
+    outline: none;
+}
+
 body {
     color: #333333;
-    font-family: arial;
-    max-width: 650px;
+    font-family: var(--font);
     margin: 0 auto;
     padding: 0 16px;
-
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -13,45 +22,205 @@ body {
 
 .main-content {
     flex-grow: 1;
+    border-radius: 20px;
+    background-color: #f0fcf0;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 1%;
+
 }
+
+/* Hide SVGs */
+.dissapear {
+    display: none;
+}
+
 
 footer {
     color: #888888;
     border-top: 1px solid #eeeeee;
-    margin-top: 16px;
-    padding: 16px 0;
+    margin-top: 1%;   
 }
 
 header {
-    margin-top: 16px;
     margin-bottom: 48px;
 }
 
 h1 {
-    font-size: 64px;
-    margin-bottom: 16px;
+    font-size: 4rem;
+    text-align: center;
+    margin: 2%
+}
+
+
+/* Navigation and header */
+#navigation {
+    text-align: center;
 }
 
 header a {
     color: #888888;
-    margin-right: 16px;
+    margin-right: 2%;
     text-decoration: none;
+    font-size: 1.5rem;
 }
 
-.portait {
-    width: 250px;
+header a:hover {
+    text-decoration: underline;
 }
 
 
+/* Search bar and button */
 input {
     border: 1px solid #CCCCCC;
+    border-radius: 10px;
     padding: 8px;
+    width: 40%;
+    margin-right: 2%
 }
 
 button {
     cursor: pointer;
-    border: 1px solid #888888;
-    background: #888888;
-    color: white;
-    padding: 8px;
+    border-radius: 10px;
+    border: 1px solid #CCCCCC;
+    background: #d5edd5;
+    color: #888888;
+    padding: 10px;
+}
+
+button:hover {
+    background: #b4d6b4;
+}
+
+button:active {
+    background: #97ba97;
+}
+
+/* About section picture */
+.portait {
+    width: 250px;
+}
+
+/* Centering the main body of text in index.hbs */
+.text-content {
+    text-align: center;
+}
+
+/* Media queries */
+@media screen and (max-width:800px) and (orientation:portrait) {
+    input {
+        padding-left: 60%;
+        font-size: 16px;
+    }
+    
+    .main-content {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    body {
+        background-color:  #f0fcf0;
+    }
+}
+
+
+
+/* Animations */
+#rain-1 {
+    animation: rain 0.4s infinite;
+    -webkit-animation: rain 0.4s infinite;
+    -moz-animation: rain 0.4s infinite;
+    -o-animation: rain 0.4s infinite;
+    -ms-animation: rain 0.4s infinite;
+}
+
+#rain-2 {
+    animation: rain2 0.4s infinite;
+    -webkit-animation: rain2 0.4s infinite;
+    -moz-animation: rain2 0.4s infinite;
+    -o-animation: rain2 0.4s infinite;
+    -ms-animation: rain2 0.4s infinite;
+}
+
+
+@keyframes rain {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes rain2 {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+#cloud-1 {
+    animation: clouds 15s linear infinite;
+    -webkit-animation: clouds 15s linear infinite;
+    -moz-animation: clouds 15s linear infinite;
+    -o-animation: clouds 15s linear infinite;
+    -ms-animation: clouds 15s linear infinite;
+
+}
+#cloud-2 {
+    animation: clouds 20s linear infinite;
+    -webkit-animation: clouds 20s linear infinite;
+    -moz-animation: clouds 20s linear infinite;
+    -o-animation: clouds 20s linear infinite;
+    -ms-animation: clouds 20s linear infinite;
+}
+#cloud-3 {
+    animation: clouds 35s linear infinite;
+    -webkit-animation: clouds 35s linear infinite;
+    -moz-animation: clouds 35s linear infinite;
+    -o-animation: clouds 35s linear infinite;
+    -ms-animation: clouds 35s linear infinite;
+}
+#cloud-4 {
+    animation: clouds 40s linear infinite;
+    -webkit-animation: clouds 40s linear infinite;
+    -moz-animation: clouds 40s linear infinite;
+    -o-animation: clouds 40s linear infinite;
+    -ms-animation: clouds 40s linear infinite;
+}
+
+@keyframes clouds {
+    0% {
+        transform: translateX(-30%)
+    }
+    100% {
+        transform: translateX(100%)
+    }
+}
+
+#sun {
+    animation: sun 20s linear infinite;
+    -webkit-animation: sun 20s linear infinite;
+    -moz-animation: sun 20s linear infinite;
+    -o-animation: sun 20s linear infinite;
+    -ms-animation: sun 20s linear infinite;
+    transform-origin: center;
+    transform-box: fill-box;
+}
+
+@keyframes sun {
+    0% {
+        transform: rotate(0deg)
+    }
+    100% {
+        transform: rotate(360deg)
+    }
 }

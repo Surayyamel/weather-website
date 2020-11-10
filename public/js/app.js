@@ -10,15 +10,44 @@ weatherForm.addEventListener('submit', (e) => {
   const location = search.value;
   message1.textContent = 'Loading...';
   message2.textContent = '';
+
   // Fetching weather data
   fetch(`/weather?address=${location}`).then((response) => {
     response.json().then((data) => {
       if (data.error) {
         message1.textContent = data.error;
-        //message2.textContent = '';
+        message2.textContent = '';
       } else {
+        // Inserting the forecast data into the hbs
         message1.textContent = data.location;
         message2.textContent = data.forecast;
+
+        // Grabbing the SVGs
+        const rainSvg = document.getElementById('rain-svg');
+        const sunnySvg = document.getElementById('sunny-svg');
+        const cloudySvg = document.getElementById('cloudy-svg');
+
+        const forecast = data.forecast.toLowerCase();
+
+        // Checking for different weather types to show different SVGs
+        if (forecast.includes('cloudy') || forecast.includes('fog') || forecast.includes('smoke') || forecast.includes('overcast') || forecast.includes('mist')) {
+          rainSvg.classList.add('dissapear');
+          sunnySvg.classList.add('dissapear');
+          cloudySvg.classList.remove('dissapear');
+          
+
+        } else if (forecast.includes('sunny') || forecast.includes('clear')) {
+          rainSvg.classList.add('dissapear');
+          cloudySvg.classList.add('dissapear');
+          sunnySvg.classList.remove('dissapear');
+          
+
+        } else if (forecast.includes('rain') || forecast.includes('drizzle')) {
+          sunnySvg.classList.add('dissapear');
+          cloudySvg.classList.add('dissapear');
+          rainSvg.classList.remove('dissapear');
+         
+        }
       }
     });
   });
