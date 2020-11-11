@@ -23,7 +23,7 @@ body {
 .main-content {
     flex-grow: 1;
     border-radius: 20px;
-    background-color: #f0fcf0;
+    background-color:/* #f0fcf0;*/ #f5f9ff;
     margin-left: 20%;
     margin-right: 20%;
     margin-top: 1%;
@@ -39,7 +39,8 @@ body {
 footer {
     color: #888888;
     border-top: 1px solid #eeeeee;
-    margin-top: 1%;   
+    margin-top: 1%;
+    text-align: right;
 }
 
 header {
@@ -119,7 +120,7 @@ button:active {
     }
 
     body {
-        background-color:  #f0fcf0;
+        background-color: #f5f9ff;
     }
 }
 
