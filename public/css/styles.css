@@ -23,7 +23,7 @@ body {
 .main-content {
     flex-grow: 1;
     border-radius: 20px;
-    background-color:/* #f0fcf0;*/ #f5f9ff;
+    background-color: #f5f9ff;
     margin-left: 20%;
     margin-right: 20%;
     margin-top: 1%;
@@ -97,18 +97,13 @@ button:active {
     background: #97ba97;
 }
 
-/* About section picture */
-.portait {
-    width: 250px;
-}
-
-/* Centering the main body of text in index.hbs */
+/* Centering the main body of text */
 .text-content {
     text-align: center;
 }
 
 /* Media queries */
-@media screen and (max-width:800px) and (orientation:portrait) {
+@media screen and (max-width:800px)  {
     input {
         width: 50%;
         font-size: 16px;
@@ -123,6 +118,7 @@ button:active {
         background-color: #f5f9ff;
     }
 }
+
 
 
 
