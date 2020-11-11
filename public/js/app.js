@@ -10,6 +10,7 @@ weatherForm.addEventListener('submit', (e) => {
   const location = search.value;
   message1.textContent = 'Loading...';
   message2.textContent = '';
+  document.getElementById('searchbox').value = '';
 
   // Fetching weather data
   fetch(`/weather?address=${location}`).then((response) => {
@@ -21,6 +22,7 @@ weatherForm.addEventListener('submit', (e) => {
         // Inserting the forecast data into the hbs
         message1.textContent = data.location;
         message2.textContent = data.forecast;
+       
 
         // Grabbing the SVGs
         const rainSvg = document.getElementById('rain-svg');
