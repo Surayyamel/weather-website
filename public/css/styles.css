@@ -110,7 +110,7 @@ button:active {
 /* Media queries */
 @media screen and (max-width:800px) and (orientation:portrait) {
     input {
-        padding-left: 60%;
+        width: 50%;
         font-size: 16px;
     }
     
