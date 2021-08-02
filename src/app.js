@@ -24,7 +24,7 @@ app.use(express.static(publicDirectoryPath));
 
 app.get('', (req, res) => {
   res.render('index', {
-    title: 'Weather',
+    title: `Weather`,
     name: 'Surayya Fenton',
   });
 });
@@ -44,7 +44,7 @@ app.get('/help', (req, res) => {
   });
 });
 
-// Weather forecast JSON endpoint using geocode and forecast
+// Weather forecast endpoint using geocode and forecast
 app.get('/weather', (req, res) => {
   if (!req.query.address) {
     return res.send({
@@ -68,19 +68,6 @@ app.get('/weather', (req, res) => {
         address: req.query.address
       })
     });
-  });
-});
-
-
-app.get('/products', (req, res) => {
-  if (!req.query.search) {
-    return res.send({
-      error: 'You must provide a search query',
-    });
-  }
-  console.log(req.query);
-  res.send({
-    products: [],
   });
 });
 

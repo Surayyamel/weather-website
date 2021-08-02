@@ -33,21 +33,21 @@ weatherForm.addEventListener('submit', (e) => {
 
         // Checking for different weather types to show different SVGs
         if (forecast.includes('cloudy') || forecast.includes('fog') || forecast.includes('smoke') || forecast.includes('overcast') || forecast.includes('mist')) {
-          rainSvg.classList.add('dissapear');
-          sunnySvg.classList.add('dissapear');
-          cloudySvg.classList.remove('dissapear');
+          rainSvg.classList.add('disapear');
+          sunnySvg.classList.add('disapear');
+          cloudySvg.classList.remove('disapear');
           
 
         } else if (forecast.includes('sunny') || forecast.includes('clear')) {
-          rainSvg.classList.add('dissapear');
-          cloudySvg.classList.add('dissapear');
-          sunnySvg.classList.remove('dissapear');
+          rainSvg.classList.add('disapear');
+          cloudySvg.classList.add('disapear');
+          sunnySvg.classList.remove('disapear');
           
 
         } else if (forecast.includes('rain') || forecast.includes('drizzle')) {
-          sunnySvg.classList.add('dissapear');
-          cloudySvg.classList.add('dissapear');
-          rainSvg.classList.remove('dissapear');
+          sunnySvg.classList.add('disapear');
+          cloudySvg.classList.add('disapear');
+          rainSvg.classList.remove('disapear');
          
         }
       }

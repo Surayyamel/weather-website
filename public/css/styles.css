@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@100&display=swap');
 
 :root{
-    --font: 'Nunito', sans-serif; 
+    --font: 'Cataraman', sans-serif; 
 }
 
 * {
@@ -23,6 +25,7 @@ body {
 .main-content {
     flex-grow: 1;
     border-radius: 20px;
+    
     background-color: #f5f9ff;
     margin-left: 20%;
     margin-right: 20%;
@@ -31,7 +34,7 @@ body {
 }
 
 /* Hide SVGs */
-.dissapear {
+.disapear {
     display: none;
 }
 
@@ -100,6 +103,7 @@ button:active {
 /* Centering the main body of text */
 .text-content {
     text-align: center;
+    padding: 20px
 }
 
 /* Media queries */
@@ -119,7 +123,9 @@ button:active {
     }
 }
 
-
+.svg-container {
+    margin-top: 10%;
+}
 
 
 /* Animations */
